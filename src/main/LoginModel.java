@@ -12,13 +12,12 @@ public class LoginModel {
     Connection connection;
 
     public LoginModel(){
-
         connection = SQLConnection.connect();
         if (connection == null)
             System.exit(1);
 
     }
-
+    // Checking database connection
     public Boolean isDbConnected(){
         try {
             return !connection.isClosed();
@@ -27,11 +26,11 @@ public class LoginModel {
             return false;
         }
     }
-
+    //Checking if the input is same as the database.
     public Boolean isLogin(String user, String pass, String opt) throws SQLException {
         PreparedStatement preparedStatement = null;
-        ResultSet resultSet=null;
-        String query = "select * from login where username = ? and password= ? and division = ?";
+        ResultSet resultSet = null;
+        String query = "select * from Employee where username = ? and password= ? and type = ?";
         try {
 
             preparedStatement = this.connection.prepareStatement(query);
@@ -55,7 +54,5 @@ public class LoginModel {
            preparedStatement.close();
            resultSet.close();
         }
-
     }
-
 }

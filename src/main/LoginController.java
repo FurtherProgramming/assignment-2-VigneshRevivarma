@@ -3,9 +3,12 @@ package main;
 import Admin.AdminController;
 import Employee.EmployeeController;
 import javafx.collections.FXCollections;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -34,6 +37,8 @@ public class LoginController implements Initializable {
     private ComboBox<option> combobox;
     @FXML
     private Button loginButton;
+    @FXML
+    private Button registerButton;
     @FXML
     private Label loginStatus;
 
@@ -74,7 +79,7 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    // Login Dashboard used for an Employee.
     public void employeeLogin() {
         try {
             Stage userStage = new Stage();
@@ -94,7 +99,7 @@ public class LoginController implements Initializable {
         }
 
     }
-
+    // Login Dashboard used for an Admin.
     public void adminLogin() {
         try {
             Stage adminStage = new Stage();
@@ -114,12 +119,39 @@ public class LoginController implements Initializable {
         }
 
     }
+    // Register form
+    public void Register(ActionEvent event) throws Exception{
 
-
-
-
+        try {
+            Node node = (Node) event.getSource();
+            Stage thisStage = (Stage) node.getScene().getWindow();
+            thisStage.close();
+            Parent createAcc = FXMLLoader.load(getClass().getResource("Register.fxml"));
+            Scene sceneCreate = new Scene(createAcc);
+            Stage secondaryStage = new Stage();
+            secondaryStage.setScene(sceneCreate);
+            secondaryStage.setTitle("Register Form");
+            secondaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // Reset Password form
+    public void resetPassword(ActionEvent event) throws Exception  {
+        try {
+            Node node = (Node) event.getSource();
+            Stage thisStage = (Stage) node.getScene().getWindow();
+            thisStage.close();
+            Parent createAcc = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
+            Scene sceneCreate = new Scene(createAcc);
+            Stage secondaryStage = new Stage();
+            secondaryStage.setScene(sceneCreate);
+            secondaryStage.setTitle("Reset Password");
+            secondaryStage.show();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     //11.2.3 big sur
-
-
-
+    }
 }

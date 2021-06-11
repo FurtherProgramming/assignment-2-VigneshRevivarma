@@ -1,5 +1,6 @@
 package main;
 import java.sql.*;
+import java.sql.Connection;
 
 
 public class SQLConnection {

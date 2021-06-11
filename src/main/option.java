@@ -1,5 +1,5 @@
 package main;
-
+// enum option for the combobox in login tab.
 public enum option {
     Admin , Employee;
 

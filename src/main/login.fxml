@@ -30,8 +30,8 @@
                 <Label layoutX="39.0" layoutY="158.0" prefHeight="17.0" prefWidth="65.0" text="Password" />
                 <ComboBox fx:id="combobox" layoutX="123.0" layoutY="189.0" prefWidth="150.0" promptText="Admin / Employee" />
             <Label fx:id="loginStatus" layoutX="6.0" layoutY="239.0" prefHeight="17.0" prefWidth="110.0" />
-            <Button fx:id="loginButton1" layoutX="25.0" layoutY="289.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="150.0" text="Reset Password" />
-            <Button fx:id="loginButton11" layoutX="186.0" layoutY="289.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="150.0" text="Register" />
+            <Button fx:id="resetPasswordButton" layoutX="25.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetPassword" prefHeight="25.0" prefWidth="150.0" text="Reset Password" />
+            <Button fx:id="registerButton" layoutX="186.0" layoutY="289.0" mnemonicParsing="false" onAction="#Register" prefHeight="25.0" prefWidth="150.0" text="Register" />
             </children>
         </AnchorPane>
     </children>
